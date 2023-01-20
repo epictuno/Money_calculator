@@ -5,6 +5,7 @@ import javax.swing.SwingUtilities;
 import moneycalculator.control.MCController;
 import moneycalculator.model.Currency;
 import moneycalculator.model.Money;
+import moneycalculator.persistence.CurrencyLoader;
 import moneycalculator.persistence.files.CurrencyLoaderFromFile;
 import moneycalculator.persistence.rest.ExchangeRateLoaderFromWebService;
 import moneycalculator.view.swing.DialogSwing;
@@ -14,7 +15,7 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("MoneyCalculator...");
-        CurrencyLoaderFromFile currencyLoaderFromFile = 
+        CurrencyLoader currencyLoaderFromFile = 
                 new CurrencyLoaderFromFile("currencies.txt");
         List<Currency> currencies = currencyLoaderFromFile.currencyLoader();
         

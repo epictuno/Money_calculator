@@ -6,15 +6,17 @@ import static java.lang.constant.ConstantDescs.NULL;
 import moneycalculator.model.Currency;
 import moneycalculator.model.ExchangeRate;
 import moneycalculator.model.Money;
+import moneycalculator.persistence.ExchangeRateLoader;
 import moneycalculator.persistence.rest.ExchangeRateLoaderFromWebService;
+import moneycalculator.view.Dialog;
 import moneycalculator.view.swing.DialogSwing;
 
 public class MCController implements ActionListener {
-    private final DialogSwing dialogSwing;
-    private final ExchangeRateLoaderFromWebService ERLFWS; //siglas de la clase
+    private final Dialog dialogSwing;
+    private final ExchangeRateLoader ERLFWS; //siglas de la clase
 
-    public MCController(DialogSwing dialogSwing,
-                        ExchangeRateLoaderFromWebService ERLFWS) {
+    public MCController(Dialog dialogSwing,
+                        ExchangeRateLoader ERLFWS) {
         this.dialogSwing = dialogSwing;
         this.ERLFWS = ERLFWS;
         this.dialogSwing.registerController(this);
